@@ -19,6 +19,7 @@ import { PatientFormComponent } from './patient-form/patient-form.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { DoctorListComponent } from './doctor-list/doctor-list.component';
 
 registerLocaleData(en);
 
@@ -28,6 +29,7 @@ registerLocaleData(en);
     PatientComponent,
     PatientFormComponent,
     DoctorFormComponent,
+    DoctorListComponent,
   ],
   imports: [
     BrowserModule,
