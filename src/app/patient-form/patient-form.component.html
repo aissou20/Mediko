@@ -1,0 +1,69 @@
+<h1> Create a patient </h1>
+<!--{{ model | json }}-->
+<div class="container">
+  <div [hidden]="submitted">
+    <form (ngSubmit)="onSubmit()" #patientForm="ngForm">
+      <div class="form-group">
+        <label for="firstname">Name</label>
+        <input type="text" class="form-control" id="firstname"
+               required
+               [(ngModel)]="model.firstname" name="firstname"
+               #firstname="ngModel"
+        >
+        <div [hidden]="firstname.valid || firstname.pristine"
+             class="alert alert-danger">
+          Firstname is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="lastname">Lastname</label>
+        <input type="text" class="form-control" id="lastname"
+               required
+               [(ngModel)]="model.lastname" name="lastname"
+               #lastname="ngModel"
+        >
+        <div [hidden]="lastname.valid || lastname.pristine"
+             class="alert alert-danger">
+          Lastname is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email"
+               required
+               [(ngModel)]="model.email" name="email"
+               #email="ngModel"
+        >
+        <div [hidden]="email.valid || email.pristine"
+             class="alert alert-danger">
+          Email is required
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!patientForm.form.valid">Submit</button>
+    </form>
+  </div>
+
+  <div [hidden]="!submitted">
+    <h2>You submitted a new patient</h2>
+      <div class="row">
+        <div class="col-xs-3">Firstname</div>
+        <div class="col-xs-9">{{ model.firstname }}</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">Lastname</div>
+        <div class="col-xs-9">{{ model.lastname }}</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">Email</div>
+        <div class="col-xs-9">{{ model.email }}</div>
+      </div>
+      <br>
+      <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+  </div>
+</div>
+
+
+

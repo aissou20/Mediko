@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mediko-afb4d": {
+      "hosting": {
+        "Mediko": [
+          "mediko-afb4d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mediko-afb4d"
+  }
+}

@@ -110,6 +110,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "Mediko:build:production",
+            "firebaseProject": "mediko-afb4d",
+            "firebaseHostingSite": "mediko-afb4d"
+          }
         }
       }
     }
