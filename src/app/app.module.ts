@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { DoctorFormComponent } from './doctor-form/doctor-form.component';
 import { PatientComponent } from './patient/patient.component';
 import { PatientFormComponent } from './patient-form/patient-form.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -25,7 +26,8 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     PatientComponent,
-    PatientFormComponent
+    PatientFormComponent,
+    DoctorFormComponent,
   ],
   imports: [
     BrowserModule,
