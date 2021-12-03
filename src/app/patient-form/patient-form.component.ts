@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Patient} from '../models/patient';
+import {PatientCommand} from "../../services/commands/patient.command";
 
 @Component({
   selector: 'app-patient-form',
@@ -8,25 +9,22 @@ import {Patient} from '../models/patient';
 })
 export class PatientFormComponent implements OnInit {
 
-  constructor() {
+  constructor(private patientCommand: PatientCommand) {
+
   }
 
-  model = new Patient(1, "diallo", 'moun', 'moun@mail.com');
+  model = new Patient("", '', '');
 
   //props submit
   submitted = false;
 
-  onSubmit() {
+  //method for creating a patient and sending datas to firebase
+  createPatient() {
+    this.patientCommand.addPatientToFirebase(this.model)
     this.submitted = true;
   }
 
   ngOnInit(): void {
   }
-
-  //method for creating a patient
-  createPatient(){
-    this.model= new Patient(2, "", '', '');
-  }
-
 
 }
