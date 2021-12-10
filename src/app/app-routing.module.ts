@@ -4,6 +4,7 @@ import { PatientComponent } from "./patient/patient.component";
 import { PatientFormComponent } from "./patient-form/patient-form.component";
 import { DoctorFormComponent } from "./doctor-form/doctor-form.component";
 import { DoctorListComponent } from "./doctor-list/doctor-list.component";
+import {MeetingFormComponent} from "./meeting-form/meeting-form.component";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/patient' },
@@ -11,8 +12,7 @@ const routes: Routes = [
   { path: 'patient/create', component: PatientFormComponent },
   { path: 'doctor/list', component: DoctorListComponent},
   { path: 'doctor/create', component: DoctorFormComponent},
- // { path: 'welcome', loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule) }
-  //{ path: 'patient', loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule) }
+  { path: 'meeting/create', component: MeetingFormComponent},
 ];
 
 @NgModule({

@@ -21,6 +21,7 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import {AngularFireModule} from "@angular/fire/compat";
+import { MeetingFormComponent } from './meeting-form/meeting-form.component';
 
 registerLocaleData(en);
 
@@ -31,6 +32,7 @@ registerLocaleData(en);
     PatientFormComponent,
     DoctorFormComponent,
     DoctorListComponent,
+    MeetingFormComponent,
   ],
   imports: [
     BrowserModule,
