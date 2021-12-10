@@ -22,6 +22,7 @@ import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import {AngularFireModule} from "@angular/fire/compat";
 import { MeetingFormComponent } from './meeting-form/meeting-form.component';
+import { MeetingListComponent } from './meeting-list/meeting-list.component';
 
 registerLocaleData(en);
 
@@ -33,6 +34,7 @@ registerLocaleData(en);
     DoctorFormComponent,
     DoctorListComponent,
     MeetingFormComponent,
+    MeetingListComponent,
   ],
   imports: [
     BrowserModule,
