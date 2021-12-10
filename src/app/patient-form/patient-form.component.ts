@@ -13,14 +13,14 @@ export class PatientFormComponent implements OnInit {
 
   }
 
-  model = new Patient("", '', '');
+  patient = new Patient("", '', '');
 
   //props submit
   submitted = false;
 
   //method for creating a patient and sending datas to firebase
   createPatient() {
-    this.patientCommand.addPatientToFirebase(this.model)
+    this.patientCommand.addPatientToFirebase(this.patient)
     this.submitted = true;
   }
 
