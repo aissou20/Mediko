@@ -21,6 +21,8 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import {AngularFireModule} from "@angular/fire/compat";
+import { AuthModule } from '@auth0/auth0-angular';
+import {LoginComponent} from "./login/login.component";
 import { MeetingFormComponent } from './meeting-form/meeting-form.component';
 import { MeetingListComponent } from './meeting-list/meeting-list.component';
 
@@ -33,6 +35,7 @@ registerLocaleData(en);
     PatientFormComponent,
     DoctorFormComponent,
     DoctorListComponent,
+    LoginComponent,
     MeetingFormComponent,
     MeetingListComponent,
   ],
@@ -47,7 +50,11 @@ registerLocaleData(en);
     NzMenuModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AuthModule.forRoot({
+      domain: 'dev-txd4ulg6.us.auth0.com',
+      clientId: '84rlyYCSMwHUwOuFgpScBJsULdLa86gq'
+    }),
   ],
   providers: [{ provide: NZ_I18N, useValue: en_GB }],
   bootstrap: [AppComponent]
