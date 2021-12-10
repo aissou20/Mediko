@@ -13,13 +13,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { DoctorListComponent } from './doctor-list/doctor-list.component';
 import { DoctorFormComponent } from './doctor-form/doctor-form.component';
 import { PatientComponent } from './patient/patient.component';
 import { PatientFormComponent } from './patient-form/patient-form.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { DoctorListComponent } from './doctor-list/doctor-list.component';
+import {AngularFireModule} from "@angular/fire/compat";
 
 registerLocaleData(en);
 
@@ -41,7 +42,8 @@ registerLocaleData(en);
     NzLayoutModule,
     NzMenuModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [{ provide: NZ_I18N, useValue: en_GB }],
   bootstrap: [AppComponent]

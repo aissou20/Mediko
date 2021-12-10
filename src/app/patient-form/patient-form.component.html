@@ -2,7 +2,7 @@
 <!--{{ model | json }}-->
 <div class="container">
   <div [hidden]="submitted">
-    <form (ngSubmit)="onSubmit()" #patientForm="ngForm">
+    <form (ngSubmit)="createPatient()" #patientForm="ngForm">
       <div class="form-group">
         <label for="firstname">Name</label>
         <input type="text" class="form-control" id="firstname"
