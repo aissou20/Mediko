@@ -13,9 +13,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { PatientListComponent } from './patient-list/patient-list.component';
 import { DoctorListComponent } from './doctor-list/doctor-list.component';
 import { DoctorFormComponent } from './doctor-form/doctor-form.component';
-import { PatientComponent } from './patient/patient.component';
 import { PatientFormComponent } from './patient-form/patient-form.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
@@ -28,7 +28,7 @@ registerLocaleData(en);
 @NgModule({
   declarations: [
     AppComponent,
-    PatientComponent,
+    PatientListComponent,
     PatientFormComponent,
     DoctorFormComponent,
     DoctorListComponent,
